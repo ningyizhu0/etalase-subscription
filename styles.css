@@ -1,0 +1,293 @@
+:root{
+  --paper:#F4EFE5;
+  --ink:#191713;
+  --muted:#5E574C;
+  --accent:#B83B1D;
+  --accent-strong:#A8330F;
+  --rule:rgba(25,23,19,0.18);
+  --rule-strong:rgba(25,23,19,0.45);
+  --font-display:"Instrument Serif",Georgia,serif;
+  --font-body:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+@media (prefers-reduced-motion: no-preference){
+  html{scroll-behavior:smooth}
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.6;
+  font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  width:100%;
+  max-width:1120px;
+  margin-inline:auto;
+  padding-inline:clamp(20px,5vw,64px);
+}
+
+a{
+  color:var(--accent);
+  text-decoration:none;
+  transition:color 150ms ease;
+}
+
+a:hover,
+a:focus-visible{
+  color:var(--accent-strong);
+}
+
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+
+.visually-hidden,
+.skip{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
+}
+
+.skip:focus{
+  position:fixed;
+  top:16px;
+  left:16px;
+  width:auto;
+  height:auto;
+  clip:auto;
+  background:var(--ink);
+  color:var(--paper);
+  padding:12px 16px;
+  border-radius:6px;
+  z-index:10;
+}
+
+/* Header */
+.site-header{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:space-between;
+  row-gap:8px;
+  padding-block:24px;
+  border-bottom:1px solid var(--rule);
+}
+
+.wordmark{
+  margin:0;
+  font-weight:600;
+  letter-spacing:-0.01em;
+}
+
+.nav-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 24px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.site-header nav a{
+  color:var(--ink);
+  font-weight:500;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible{
+  color:var(--accent);
+}
+
+/* Main */
+main{
+  padding-block:clamp(48px,8vw,96px) clamp(64px,10vw,128px);
+}
+
+.intro{
+  display:grid;
+  gap:24px 48px;
+  margin-block-end:clamp(64px,10vw,112px);
+}
+
+.intro h1{
+  margin:0;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(3rem,8vw,7rem);
+  line-height:0.95;
+  letter-spacing:-0.02em;
+  overflow-wrap:break-word;
+  text-wrap:balance;
+}
+
+.intro p{
+  margin:0;
+  color:var(--muted);
+  max-width:36ch;
+}
+
+@media (min-width:900px){
+  .intro{
+    grid-template-columns:minmax(0,8fr) minmax(0,4fr);
+    align-items:end;
+  }
+}
+
+/* Price board */
+.price-board{
+  border-top:1px solid var(--rule);
+}
+
+.price-row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  row-gap:8px;
+  column-gap:16px;
+  padding-block:clamp(24px,5vw,40px);
+  border-bottom:1px solid var(--rule);
+}
+
+.ordinal{
+  color:var(--muted);
+  font-weight:600;
+  font-size:13px;
+  font-variant-numeric:tabular-nums;
+}
+
+.product{
+  flex:0 0 100%;
+}
+
+.product-name{
+  margin:0;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(2rem,5vw,4rem);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  text-wrap:balance;
+}
+
+.product-meta{
+  margin:6px 0 0;
+  color:var(--muted);
+  font-size:15px;
+}
+
+.leader{
+  display:none;
+}
+
+.price{
+  margin:0;
+  font-weight:600;
+  font-size:clamp(2rem,4vw,3.5rem);
+  font-variant-numeric:tabular-nums;
+  letter-spacing:-0.01em;
+}
+
+.cta{
+  display:inline-flex;
+  align-items:center;
+  padding:12px 0;
+  min-height:44px;
+  font-weight:500;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:4px;
+  white-space:nowrap;
+}
+
+@media (min-width:720px){
+  .price-row{
+    display:grid;
+    grid-template-columns:3.5rem minmax(0,1fr) minmax(24px,1fr) auto max-content;
+    column-gap:clamp(12px,2vw,24px);
+    align-items:baseline;
+  }
+
+  .leader{
+    display:block;
+    align-self:end;
+    border-bottom:1px dotted var(--rule-strong);
+    margin-bottom:8px;
+    min-height:1px;
+  }
+}
+
+/* Cara pesan */
+.cara-pesan{
+  max-width:56ch;
+  margin-block-start:clamp(64px,10vw,112px);
+}
+
+.cara-pesan h2{
+  margin:0 0 24px;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+}
+
+.cara-pesan ol{
+  margin:0;
+  padding-inline-start:28px;
+}
+
+.cara-pesan li{
+  margin-block-end:8px;
+}
+
+.cara-pesan li::marker{
+  color:var(--accent);
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+}
+
+/* Footer */
+.site-footer{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:space-between;
+  row-gap:8px;
+  padding-block:32px;
+  border-top:1px solid var(--rule);
+  color:var(--muted);
+  font-size:14px;
+}
+
+.site-footer p{
+  margin:0;
+}
+
+.site-footer a{
+  color:var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  a{
+    transition:none;
+  }
+}
