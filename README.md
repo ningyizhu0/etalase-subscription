@@ -15,43 +15,8 @@ A dead-simple subscription storefront for **Dennis Shop**. Spotify and iCloud, t
 - Zero build steps.
 - Google Fonts only for the actual fonts.
 
-## Commands
-
-```bash
-git status
-git log --oneline
-```
-
-Or just open the site:
-
-```bash
-open index.html
-```
-
-## Structure
-
-```text
-index.html
-styles.css
-DESIGN.md
-PLAN.md
-```
-
-## Design vibe
-
-Warm paper background, ink black, one burnt-orange accent. Headings in Instrument Serif, body in Bricolage Grotesque. Prices use tabular numerals so they line up like a real printed price sheet. Everything else is restraint: no gradients, no glow, no glass, no bento grid, no fake bands, no fake stats. If it isn't real, it isn't there.
-
-## Anti-slop
-
-- No fabricated stats.
-- No fake testimonials.
-- No dead nav links.
-- No generic CTAs.
-- No em dashes.
-- No over-filtered, sterile default.
-
-If you want to know why every decision was made, read `DESIGN.md`.
-
 ## License
 
 No license file. If you want to reuse this for something else, just ask.
+
+Buat Verifikasi Jualan :)
